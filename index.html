@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>10Tenders – Crispy. Juicy. Legendary.</title>
+    <meta name="description" content="Hand-breaded chicken tenders, signature sauces, and sides that slap. Welcome to 10Tenders." />
+    <!-- Make sure styles.css is in the same folder as this file -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Announcement Bar -->
+    <div class="bar">
+      <strong>🔥 Launch Deal:</strong> Free fries with any 3-Tender combo. Use code <code>FRYDAY</code>.
+    </div>
+
+    <!-- Header / Nav -->
+    <header class="header" id="top">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="10Tenders home">
+          <span class="logo" aria-hidden="true">🍗</span>
+          <span class="brand-text">10<span class="accent">Tenders</span></span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="hamburger"></span>
+        </button>
+
+        <nav id="primary-nav" class="nav-links" data-collapsible>
+          <a href="#menu">Menu</a>
+          <a href="#order">Order</a>
+          <a href="#locations">Locations</a>
+          <a href="#rewards">Rewards</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a href="tel:+17145551234" class="btn btn-outline">(714) 555-1234</a>
+          <a href="#order" class="btn">Order Now</a>
+          <a href="#login" class="btn">Login In / Register</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" role="banner">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <h1>Crispy. Juicy. Legendary.</h1>
+        <p>Hand-breaded tenders, signature sauces, and sides that slap. Welcome to <strong>10Tenders</strong>.</p>
+        <div class="hero-actions">
+          <a href="#order" class="btn btn-primary">Order for Pickup</a>
+          <a href="#menu" class="btn btn-light">Explore Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <main id="main">
+      <!-- Fan Favorites -->
+      <section class="section" id="menu">
+        <div class="container">
+          <h2>Fan Favorites</h2>
+          <p class="muted">Our most-ordered combos this week.</p>
+
+          <div class="grid cards">
+            <article class="card">
+              <div class="card-media" aria-hidden="true">3-Tender Combo</div>
+              <div class="card-body">
+                <header class="card-head">
+                  <h3>3-Tender Combo</h3>
+                  <span class="price">$9.99</span>
+                </header>
+                <p>Fries, drink, and a sauce of your choice.</p>
+                <button class="btn btn-dark add" data-item="3-Tender Combo">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media" aria-hidden="true">5-Tender Combo</div>
+              <div class="card-body">
+                <header class="card-head">
+                  <h3>5-Tender Combo</h3>
+                  <span class="price">$13.99</span>
+                </header>
+                <p>Double the crunch with two sauces.</p>
+                <button class="btn btn-dark add" data-item="5-Tender Combo">Add to Order</button>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media" aria-hidden="true">Tender Sandwich</div>
+              <div class="card-body">
+                <header class="card-head">
+                  <h3>Tender Sandwich</h3>
+                  <span class="price">$10.49</span>
+                </header>
+                <p>Brioche bun, pickles, and house sauce.</p>
+                <button class="btn btn-dark add" data-item="Tender Sandwich">Add to Order</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rewards / USPs -->
+      <section class="section soft" id="rewards">
+        <div class="container grid features">
+          <div class="feature">
+            <h3>Fresh, Never Frozen</h3>
+            <p>Premium chicken marinated 24 hours for flavor that hits.</p>
+          </div>
+          <div class="feature">
+            <h3>Sauces on Sauces</h3>
+            <p>From House Heat to Sweet Garlic—10 signature sauces.</p>
+          </div>
+          <div class="feature">
+            <h3>Rewards That Stack</h3>
+            <p>Earn points every bite. Free tenders faster than you think.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Locations -->
+      <section class="section" id="locations">
+        <div class="container grid location-grid">
+          <div>
+            <h2>Find a 10Tenders Near You</h2>
+            <p class="muted">Pickup or dine-in. More locations launching soon.</p>
+            <ul class="locations">
+              <li>
+                <span class="pin" aria-hidden="true">📍</span>
+                <div>
+                  <div class="loc-name">Fullerton, CA</div>
+                  <div class="loc-addr">123 Crispy Ave</div>
+                  <a href="tel:+17145551234" class="loc-phone">(714) 555-1234</a>
+                </div>
+              </li>
+              <li>
+                <span class="pin" aria-hidden="true">📍</span>
+                <div>
+                  <div class="loc-name">Anaheim, CA</div>
+                  <div class="loc-addr">77 Dipper Rd</div>
+                  <a href="tel:+17145559087" class="loc-phone">(714) 555-9087</a>
+                </div>
+              </li>
+            </ul>
+            <a href="#order" class="btn">Start an Order</a>
+          </div>
+          <div class="map">
+            <!-- Simple placeholder map -->
+            <div class="map-box">
+              <div class="map-grid"></div>
+              <div class="map-dot" style="top: 45%; left: 52%" title="Fullerton"></div>
+              <div class="map-dot" style="top: 50%; left: 60%" title="Anaheim"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Preview -->
+      <section class="section soft" id="about">
+        <div class="container about">
+          <div class="about-media" aria-hidden="true"></div>
+          <div class="about-text">
+            <h2>About 10Tenders</h2>
+            <p>
+              We started with a simple obsession: nail the perfect tender. At 10Tenders, we hand-bread every piece,
+              craft our sauces in-house, and serve it hot and fast. Whether you’re grabbing lunch between classes or
+              fueling a late-night study session, we’ve got you.
+            </p>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Banner -->
+      <section class="section" id="order">
+        <div class="container cta">
+          <div class="cta-text">
+            <h3>Hungry now?</h3>
+            <p>Order online for pickup. Average prep time: 12–15 minutes.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-light" href="#">Order Pickup</a>
+            <a class="btn btn-ghost" href="#">Delivery</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="section soft" aria-labelledby="newsletter-heading">
+        <div class="container newsletter">
+          <div>
+            <h3 id="newsletter-heading">Get exclusive deals</h3>
+            <p class="muted">Join the 10Tenders list for drops, rewards, and spicy surprises.</p>
+          </div>
+          <form class="subscribe" id="subscribe-form" action="#" method="post">
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" required />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand-row">
+            <span class="logo" aria-hidden="true">🍗</span>
+            <span class="brand-text">10<span class="accent">Tenders</span></span>
+          </div>
+          <p class="muted">Hand-breaded tenders, signature sauces, and sides that slap. Founded in Orange County, CA.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#rewards">Rewards</a></li>
+            <li><a href="#locations">Locations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li>123 Crispy Ave, Fullerton, CA</li>
+            <li>(714) 555-1234</li>
+            <li>hello@10tenders.com</li>
+            <li>Open Daily 11am–11pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">© <span id="year"></span> 10Tenders. All rights reserved.</div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
+
+    <!-- JS -->
+    <script src="app.js" defer></script>
+  </body>
+</html>

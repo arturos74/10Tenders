@@ -4,8 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>10Tenders – Crispy. Juicy. Legendary.</title>
-    <meta name="description" content="Hand-breaded chicken tenders, signature sauces, and sides that slap. Welcome to 10Tenders." />
-    <!-- Make sure styles.css is in the same folder as this file -->
+    <meta
+      name="description"
+      content="Hand-breaded chicken tenders, signature sauces, and sides that slap. Welcome to 10Tenders."
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -24,7 +26,12 @@
           <span class="brand-text">10<span class="accent">Tenders</span></span>
         </a>
 
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
           <span class="hamburger"></span>
         </button>
 
@@ -40,7 +47,7 @@
         <div class="nav-cta">
           <a href="tel:+17145551234" class="btn btn-outline">(714) 555-1234</a>
           <a href="#order" class="btn">Order Now</a>
-          <a href="#login" class="btn">Login In / Register</a>
+          <a href="#login" class="btn">Login / Register</a>
         </div>
       </div>
     </header>
@@ -50,7 +57,10 @@
       <div class="hero-media" aria-hidden="true"></div>
       <div class="container hero-content">
         <h1>Crispy. Juicy. Legendary.</h1>
-        <p>Hand-breaded tenders, signature sauces, and sides that slap. Welcome to <strong>10Tenders</strong>.</p>
+        <p>
+          Hand-breaded tenders, signature sauces, and sides that slap. Welcome to
+          <strong>10Tenders</strong>.
+        </p>
         <div class="hero-actions">
           <a href="#order" class="btn btn-primary">Order for Pickup</a>
           <a href="#menu" class="btn btn-light">Explore Menu</a>
@@ -74,7 +84,14 @@
                   <span class="price">$9.99</span>
                 </header>
                 <p>Fries, drink, and a sauce of your choice.</p>
-                <button class="btn btn-dark add" data-item="3-Tender Combo">Add to Order</button>
+                <button
+                  class="btn btn-dark add"
+                  data-item="3-Tender Combo"
+                  data-id="1"
+                  data-price="9.99"
+                >
+                  Add to Order
+                </button>
               </div>
             </article>
 
@@ -86,7 +103,14 @@
                   <span class="price">$13.99</span>
                 </header>
                 <p>Double the crunch with two sauces.</p>
-                <button class="btn btn-dark add" data-item="5-Tender Combo">Add to Order</button>
+                <button
+                  class="btn btn-dark add"
+                  data-item="5-Tender Combo"
+                  data-id="2"
+                  data-price="13.99"
+                >
+                  Add to Order
+                </button>
               </div>
             </article>
 
@@ -98,7 +122,14 @@
                   <span class="price">$10.49</span>
                 </header>
                 <p>Brioche bun, pickles, and house sauce.</p>
-                <button class="btn btn-dark add" data-item="Tender Sandwich">Add to Order</button>
+                <button
+                  class="btn btn-dark add"
+                  data-item="Tender Sandwich"
+                  data-id="3"
+                  data-price="10.49"
+                >
+                  Add to Order
+                </button>
               </div>
             </article>
           </div>
@@ -150,7 +181,6 @@
             <a href="#order" class="btn">Start an Order</a>
           </div>
           <div class="map">
-            <!-- Simple placeholder map -->
             <div class="map-box">
               <div class="map-grid"></div>
               <div class="map-dot" style="top: 45%; left: 52%" title="Fullerton"></div>
@@ -176,16 +206,57 @@
         </div>
       </section>
 
-      <!-- CTA Banner -->
+      <!-- Order Section (Cart + Customer Info) -->
       <section class="section" id="order">
-        <div class="container cta">
-          <div class="cta-text">
-            <h3>Hungry now?</h3>
-            <p>Order online for pickup. Average prep time: 12–15 minutes.</p>
+        <div class="container order-grid">
+          <div class="order-panel">
+            <h2>Start an Order</h2>
+            <p class="muted">
+              Add items from the menu above, tell us who you are, then place a demo order that hits the backend.
+            </p>
+
+            <div class="order-customer">
+              <label>
+                <span>Name</span>
+                <input type="text" id="customer-name" placeholder="Chicken Fan" />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" id="customer-email" placeholder="you@example.com" />
+              </label>
+            </div>
+
+            <div class="order-cart">
+              <h3>Your Order</h3>
+              <ul id="order-items" class="order-items"></ul>
+              <p class="order-empty muted" id="order-empty">
+                No items yet. Tap “Add to Order” on a menu item above.
+              </p>
+
+              <div class="order-total-row">
+                <span>Total</span>
+                <strong>$<span id="order-total">0.00</span></strong>
+              </div>
+
+              <button class="btn btn-dark" id="place-order-btn" disabled>Place Demo Order</button>
+              <p class="muted small">
+                For class demo only – orders are stored in the database but no payment is processed.
+              </p>
+            </div>
           </div>
-          <div class="cta-actions">
-            <a class="btn btn-light" href="#">Order Pickup</a>
-            <a class="btn btn-ghost" href="#">Delivery</a>
+
+          <div class="order-info">
+            <h3>How this demo works</h3>
+            <ol>
+              <li>Browse the Fan Favorites menu above.</li>
+              <li>Hit <strong>Add to Order</strong> on whatever looks good.</li>
+              <li>Fill in your name and email (or leave blank to use a demo guest).</li>
+              <li>Click <strong>Place Demo Order</strong> to save it via the API &amp; MySQL backend.</li>
+            </ol>
+            <p class="muted small">
+              Behind the scenes, we create a user (if needed), calculate totals from the <code>menu_items</code> table,
+              and insert into <code>orders</code> and <code>order_items</code>.
+            </p>
           </div>
         </div>
       </section>
@@ -204,6 +275,33 @@
           </form>
         </div>
       </section>
+
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <p class="muted">
+            This is a class project demo. For questions about the build, deployment, or database design, please contact
+            the developer.
+          </p>
+          <ul class="contact-list">
+            <li>123 Crispy Ave, Fullerton, CA</li>
+            <li>(714) 555-1234</li>
+            <li>hello@10tenders.com</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Login / Register -->
+      <section class="section soft" id="login">
+        <div class="container">
+          <h2>Login / Register (Prototype)</h2>
+          <p class="muted">
+            Authentication is out of scope for this demo. Orders are tied to your email address on the backend so we
+            can show how the <code>users</code> table is used.
+          </p>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -214,7 +312,9 @@
             <span class="logo" aria-hidden="true">🍗</span>
             <span class="brand-text">10<span class="accent">Tenders</span></span>
           </div>
-          <p class="muted">Hand-breaded tenders, signature sauces, and sides that slap. Founded in Orange County, CA.</p>
+          <p class="muted">
+            Hand-breaded tenders, signature sauces, and sides that slap. Founded in Orange County, CA.
+          </p>
         </div>
         <div>
           <h4>Explore</h4>
@@ -230,8 +330,7 @@
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#press">Press</a></li>
+            <li><a href="#login">Login / Register</a></li>
           </ul>
         </div>
         <div>
@@ -244,7 +343,9 @@
           </ul>
         </div>
       </div>
-      <div class="copyright">© <span id="year"></span> 10Tenders. All rights reserved.</div>
+      <div class="copyright">
+        © <span id="year"></span> 10Tenders. All rights reserved.
+      </div>
     </footer>
 
     <!-- Toast -->

@@ -1,18 +1,3 @@
-
-4. Commit message: `Update README with setup + demo instructions`.
-5. Commit.
-
-✅ `README.md` done.
-
----
-
-### 2.6. Add `server.js` (new file)
-
-1. In the repo file list, click **“Add file” → “Create new file”**.
-2. In the filename box, type: `server.js`.
-3. Paste this:
-
-```js
 // server.js
 // 10Tenders – simple full stack demo server
 
@@ -44,7 +29,7 @@ app.use(express.static(path.join(__dirname)));
 
 // ---------- Routes ----------
 
-// Health check (nice for debugging)
+// Health check
 app.get('/api/health', async (req, res) => {
   try {
     const conn = await pool.getConnection();
@@ -57,7 +42,7 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
-// OPTIONAL: list menu items from DB if you want it
+// List menu (optional)
 app.get('/api/menu', async (req, res) => {
   try {
     const [rows] = await pool.query(
@@ -72,14 +57,6 @@ app.get('/api/menu', async (req, res) => {
 
 /*
   POST /api/orders
-  Body:
-  {
-    "customer": { "full_name": "Name", "email": "email@example.com" },
-    "items": [
-      { "menu_item_id": 1, "quantity": 2 },
-      { "menu_item_id": 3, "quantity": 1 }
-    ]
-  }
 */
 app.post('/api/orders', async (req, res) => {
   const { customer, items } = req.body || {};
@@ -113,7 +90,7 @@ app.post('/api/orders', async (req, res) => {
       }
     }
 
-    // 2) Fetch prices from menu_items so backend is source of truth
+    // 2) Fetch prices from menu_items
     const uniqueIds = [...new Set(items.map(i => i.menu_item_id))];
     const [menuRows] = await conn.query(
       `SELECT id, price FROM menu_items WHERE id IN (${uniqueIds
@@ -143,7 +120,7 @@ app.post('/api/orders', async (req, res) => {
     );
     const orderId = orderRes.insertId;
 
-    // 4) Insert order_items
+    // 4) Insert item rows
     const values = normalizedItems.map(i => [
       orderId,
       i.menu_item_id,
@@ -172,7 +149,7 @@ app.post('/api/orders', async (req, res) => {
   }
 });
 
-// Fallback: send index.html for any unknown route
+// Fallback: serve index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

@@ -1,7 +1,5 @@
 /*
-  10Tenders – Data (Seed)
-  -----------------------------------------------------------
-  Run this AFTER schema_template.sql to insert demo data.
+  10Tenders – Data 
 */
 
 USE tenders;
@@ -42,12 +40,12 @@ VALUES
   );
 
 -- =========================================================
--- SAMPLE ORDER (optional, just so there’s something in the DB)
+-- SAMPLE ORDER 
 -- =========================================================
 
 INSERT INTO orders (user_id, status, total_price)
 VALUES
-  (2, 'PLACED', 33. - 0.02); -- roughly 2 combos + 1 sandwich
+  (2, 'PLACED', 33. - 0.02); 
 
 INSERT INTO order_items (order_id, menu_item_id, quantity, price_each)
 VALUES

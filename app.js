@@ -1,4 +1,4 @@
-// 10Tenders – basic interactivity (no frameworks)
+// 10Tenders
 
 // Mobile nav toggle
 const toggleBtn = document.querySelector('.nav-toggle');

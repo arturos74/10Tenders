@@ -1,7 +1,7 @@
 /*
-  10Tenders – Schema (Template)
+  10Tenders – Schema 
   -----------------------------------------------------------
-  Purpose: Defines the database structure (no real data yet).
+  Purpose: Defines the database structure 
   
 */
 

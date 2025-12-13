@@ -889,7 +889,7 @@ body {
   gap: 0.4rem;
 }
 
-/* AI assistant (Flavor Coach) */
+/* AI assistant */
 .ai-assistant {
   position: fixed;
   left: 1.5rem;
@@ -898,7 +898,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* The little pill button when closed */
+/* The pill button when closed */
 .ai-toggle {
   border-radius: 999px;
   border: none;
@@ -1011,7 +1011,7 @@ body {
   cursor: pointer;
 }
 
-/* Make sure cart bubble and AI don't overlap on small screens */
+
 @media (max-width: 600px) {
   .cart-fab {
     bottom: 4.5rem;

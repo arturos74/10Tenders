@@ -42,7 +42,7 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
-// List menu (optional)
+// List menu 
 app.get('/api/menu', async (req, res) => {
   try {
     const [rows] = await pool.query(
@@ -72,7 +72,7 @@ app.post('/api/orders', async (req, res) => {
   try {
     await conn.beginTransaction();
 
-    // 1) Find or create user
+    // Find or create user
     let userId;
     {
       const [existing] = await conn.query(
@@ -90,7 +90,7 @@ app.post('/api/orders', async (req, res) => {
       }
     }
 
-    // 2) Fetch prices from menu_items
+    // Fetch prices from menu_items
     const uniqueIds = [...new Set(items.map(i => i.menu_item_id))];
     const [menuRows] = await conn.query(
       `SELECT id, price FROM menu_items WHERE id IN (${uniqueIds
@@ -113,14 +113,14 @@ app.post('/api/orders', async (req, res) => {
       };
     });
 
-    // 3) Insert into orders
+    // Insert into orders
     const [orderRes] = await conn.query(
       'INSERT INTO orders (user_id, status, total_price) VALUES (?, ?, ?)',
       [userId, 'PLACED', totalPrice.toFixed(2)]
     );
     const orderId = orderRes.insertId;
 
-    // 4) Insert item rows
+    // Insert item rows
     const values = normalizedItems.map(i => [
       orderId,
       i.menu_item_id,
